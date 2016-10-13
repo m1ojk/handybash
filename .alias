@@ -1,6 +1,21 @@
 alias findthis='grep -rnw . -e $@'
 alias findfile='find . -name $@'
 
+alias rm_git="sudo rm -r ~/.git"
+add_git(){
+  cd ~
+  git init
+  git remote add origin $MY_BASH_GIT
+  git pull origin master
+  git checkout -b temp##
+  git add -A
+  git commit -m "temp"
+  git checkout master
+  git merge -X theirs temp## --no-edit
+  git branch -D temp##
+  git reset HEAD^
+}
+
 wk(){
   path=$WORKSPACE
   file_count=$(ls -1 $path | wc -l)
