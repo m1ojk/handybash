@@ -1,0 +1,20 @@
+alias findthis='grep -rnw . -e $@'
+alias findfile='find . -name $@'
+
+wk(){
+  path="/products/workspace"
+  file_count=$(ls -1 $path | wc -l)
+
+  re='^[0-9]+$'
+  
+  if [ -z "$1" ]; then
+    ls -1 $path | cat -n
+  elif ! [[ $1 =~ $re ]]; then
+    echo "argument must be a number"
+  elif [ $1 -gt $file_count -o $1 -lt 1 ]; then
+    echo "no index"
+  else
+    chosen_file=$(ls -1 $path | sed -n $1p)
+    cd $path/$chosen_file
+  fi
+}

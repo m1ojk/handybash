@@ -1,0 +1,8 @@
+//ignore all
+*
+//whitelist some files
+!.mk_bashrc
+!.alias
+!.vimrc
+!.nanorc
+!.gitignore
