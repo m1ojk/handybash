@@ -18,3 +18,20 @@ wk(){
     cd $path/$chosen_file
   fi
 }
+
+alias l='ls -lrt --group-directories'
+email_attachment(){
+  subject=$1
+  file_loc=$2
+  send_to=$EMAIL
+
+  mpack -s $subject $file_loc $send_to
+}
+
+email_message(){
+  subject=$1
+  message=$2
+  send_to=$EMAIL
+
+  echo $2 | mail -s $1 $send_to
+}
