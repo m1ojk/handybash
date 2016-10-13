@@ -2,7 +2,7 @@ alias findthis='grep -rnw . -e $@'
 alias findfile='find . -name $@'
 
 wk(){
-  path="/products/workspace"
+  path=$WORKSPACE
   file_count=$(ls -1 $path | wc -l)
 
   re='^[0-9]+$'
