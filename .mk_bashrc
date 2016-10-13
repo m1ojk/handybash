@@ -1,3 +1,8 @@
+#Remember to source this file in the main .bashrc
+# if [ -f ~/.mk_bashrc ]; then 
+#  . ~/.mk_bashrc
+# fi
+
 if [ -f ~/.alias ]; then 
   . ~/.alias
 fi
