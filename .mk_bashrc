@@ -3,6 +3,8 @@
 #  . ~/.mk_bashrc
 # fi
 
+MY_BASH_GIT='git@github.com:m1ojk/handybash.git'
+
 if [ -f ~/.alias ]; then 
   . ~/.alias
 fi
