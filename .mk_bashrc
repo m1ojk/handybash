@@ -6,6 +6,7 @@
 if [ -f ~/.alias ]; then 
   . ~/.alias
 fi
+source ~/.git-prompt.sh
 
 GIT_PS1_SHOWDIRTYSTATE=true
-PS1='${debian_chroot:+($debian_chroot)}\[\e[00;31m\]\u\[\e[00;33m\] \h\[\e[00m\] \[\e[00;32m\][\w] \[\e[0;94m\]$(__git_ps1 "(%s)")\n\[\e[00m\]$ '
+PS1='\[\e[00;31m\]\u\[\e[00;33m\] \h\[\e[00m\] \[\e[00;32m\][\w] \[\e[0;94m\]$(__git_ps1 "(%s)")\n\[\e[00m\]$ '
