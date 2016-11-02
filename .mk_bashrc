@@ -8,7 +8,11 @@ MY_BASH_GIT='git@github.com:m1ojk/handybash.git'
 if [ -f ~/.alias ]; then 
   . ~/.alias
 fi
-source ~/.git-prompt.sh
+
+if [ "$(uname)" = "Darwin" ]; then
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+fi
 
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\e[00;31m\]\u\[\e[00;33m\] \h\[\e[00m\] \[\e[00;32m\][\w] \[\e[0;94m\]$(__git_ps1 "(%s)")\n\[\e[00m\]$ '
